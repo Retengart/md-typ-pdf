@@ -106,9 +106,12 @@ fn convert_to_pdf(md_file: &Path, output: &str) {
   math: mitex,
   h1-level: 1,
   raw-typst: true,
+  label-prefix: "doc-",
+  prefix-label-uses: true,
   scope: (
     image: constrained_image,
-  )
+    rule: () => line(length: 100%, stroke: 0.5pt),
+  ),
 )
 "#
     .trim()
